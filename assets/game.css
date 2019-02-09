@@ -1,0 +1,35 @@
+.bg-main {
+  background-image:url('/assets/final_destination.jpg');
+  background-position:center;
+  background-size:cover;
+}
+
+progress{
+  color:rgb(55, 206, 55);
+}
+
+.mario {
+  max-height:300px;
+  width:auto;
+}
+
+.hand {
+  max-height:300px;
+  width:auto;
+}
+
+.card{
+  border:0;
+background-color:transparent;
+margin-bottom:5vh;
+}
+
+#hand {
+  height:20vh;
+}
+
+.healthbar {
+  height:3vh;
+  width:15vh;
+  border:3px solid black;
+}

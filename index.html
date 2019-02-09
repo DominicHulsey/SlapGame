@@ -1,12 +1,83 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Slap Object Game</title>
-	<link rel="stylesheet" href="">
-	<link rel="stylesheet" href="">
-	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Slap Game</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/game.css">
 </head>
+
 <body>
-	
-	<script src=""></script>
+	<div class="container-fluid bg-main">
+		<div class="row">
+			<div class="col-12">
+				<h1 style="font-size:10vh">SLAP GAME</h1>
+			</div>
+		</div>
+		<div class="row align-items-center">
+			<div class="col-6 text-center" id="player">
+				<div class="card d-flex flex-column align-items-center mb-5">
+					<div class="d-flex align-items-center justify-content-center" id="P1">
+						<progress class="healthbar text-white" id="health2" value="100" max="100">
+						</progress>
+					</div>
+					<img class='mario img-fluid' src="/assets/mario.png" alt="" id="marioImg" />
+				</div>
+			</div>
+			<div class="col-6 text-center" id="enemy">
+				<div class="card d-flex flex-column align-items-center mb-5">
+					<div class=" text-white d-flex align-items-center justify-content-center" id="P2">
+						<progress class="healthbar text-white" id="health" value="100" max="100">
+						</progress>
+					</div>
+					<img class='hand img-fluid ' src="/assets/hand.png" id='hand' alt="" id="marioImg" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bg-dark">
+		<div class="row text-white py-4">
+			<div class="col-6 d-flex flex-column align-items-center">
+				<h3><u>Player</u></h3>
+				<h4>Attacks</h4>
+				<div class="d-flex flex-row">
+					<button class="attack" id="punch" onclick="changeHealth('enemy','punch')">Punch</button>
+					<button class="attack id = " kick" onclick="changeHealth('enemy','kick')">Kick</button>
+					<button class="attack" id="fireball" onclick="changeHealth('enemy','fireball')">Fireball</button>
+				</div>
+				<h4>Items</h4>
+				<div class="d-flex flex-row">
+					<button class="item1" onclick="itemMultiplier('GreenShell')">Green Shell</button>
+					<button class="item2" onclick="changeHealth('player','heal')">Heal</button>
+					<button class="item2" onclick="itemMultiplier('Star')">Star</button>
+				</div>
+			</div>
+
+			<!--		
+				Player 2 buttons:
+				<div class="col-6 d-flex flex-column align-items-center">
+		<h3><u>Player 2</u></h3>
+				<h4>Attacks</h4>
+				<div class="d-flex flex-row">
+					<button class="attack" id="punch" onclick="changeHealth('player','punch')">Flick</button>
+					<button class="attack id = " kick" onclick="changeHealth('player','kick')">Pinch</button>
+					<button class="attack" id="fireball" onclick="changeHealth('player','fireball')">Slap</button>
+				</div>
+				<h4>Items</h4>
+				<div class="d-flex flex-row">
+					<button class="item1" onclick="itemMultiplier('Grow')">RedBull</button>
+					<button class="item2" onclick="itemMultiplier('')">Brass Knuckles</button>
+					<button class="item2" onclick="itemMultiplier('Double')">Add Left Hand</button>
+				</div>-->
+		</div>
+	</div>
+
+
+	<script src="game.js"></script>
 </body>
+
 </html>
