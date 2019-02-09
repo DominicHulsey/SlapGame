@@ -22,6 +22,16 @@ let characters = {
   }
 }
 
+function reset() {
+  characters.player.healthStatus = 100;
+  characters.enemy.healthStatus = 100;
+  characters.attacks.punch = -1;
+  characters.attacks.kick = -5;
+  characters.attacks.fireball = -10;
+  characters.attacks.heal = 5
+  drawHealth();
+}
+
 console.log(Object.values(characters.attacks))
 
 function itemMultiplier(item) {
