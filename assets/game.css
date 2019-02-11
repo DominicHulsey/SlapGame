@@ -8,18 +8,30 @@ progress{
   color:rgb(55, 206, 55);
 }
 
+.title {
+  font-size:10vh;
+  color:white;
+  text-shadow:2px 2px black;
+}
+
+.titleImage {
+  max-height:150px;
+  max-width:100vw;
+  object-fit: contain;
+}
 .mario {
-  max-height:300px;
+  max-height:275px;
   width:auto;
 }
 
 .hand {
   max-height:300px;
   width:auto;
+  object-fit: contain;
 }
 
 .card{
-  border:0;
+border:0;
 background-color:transparent;
 margin-bottom:5vh;
 }

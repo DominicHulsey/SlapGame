@@ -14,47 +14,61 @@
 <body>
 	<div class="container-fluid bg-main">
 		<div class="row">
-			<div class="col-12">
-				<h1 style="font-size:10vh">SLAP GAME</h1>
+			<div class="col-12 d-flex justify-content-center py-4">
+				<img src="/assets/SuperSmash.png" alt="" class="titleImage" />
 			</div>
 		</div>
 		<div class="row align-items-center">
 			<div class="col-6 text-center" id="player">
-				<div class="card d-flex flex-column align-items-center mb-5">
+				<div class="card d-flex flex-column align-items-center">
 					<div class="d-flex align-items-center justify-content-center" id="P1">
-						<progress class="healthbar text-white" id="health2" value="100" max="100">
+						<progress class="healthbar text-white" id="playerHealthBar" value="100" max="100">
 						</progress>
 					</div>
-					<img class='mario img-fluid' src="/assets/mario.png" alt="" id="marioImg" />
+					<img class='mario img-fluid' id="playerImg" src="/assets/mario.png" alt="" />
 				</div>
 			</div>
 			<div class="col-6 text-center" id="enemy">
-				<div class="card d-flex flex-column align-items-center mb-5">
-					<div class=" text-white d-flex align-items-center justify-content-center" id="P2">
-						<progress class="healthbar text-white" id="health" value="100" max="100">
+				<div class="card d-flex flex-column align-items-center">
+					<div class="d-flex align-items-center justify-content-center" id="P2">
+						<progress class="healthbar text-white" id="enemyHealthBar" value="100" max="100">
 						</progress>
 					</div>
-					<img class='hand img-fluid ' src="/assets/hand.png" id='hand' alt="" id="marioImg" />
+					<img class='hand img-fluid' id="enemyImg" src="/assets/hand.png" id='hand' alt="" />
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container-fluid bg-dark">
 		<div class="row text-white py-4">
-			<div class="col-6 d-flex flex-column align-items-center">
-				<h3><u>Player</u></h3>
+			<div class="col-4 d-flex flex-column align-items-center">
+				<h3><u>Player:</u></h3>
 				<h4>Attacks</h4>
 				<div class="d-flex flex-row">
-					<button class="attack" id="punch" onclick="changeHealth('enemy','punch')">Punch</button>
-					<button class="attack id = " kick" onclick="changeHealth('enemy','kick')">Kick</button>
-					<button class="attack" id="fireball" onclick="changeHealth('enemy','fireball')">Fireball</button>
+					<button class="attack" id="punch"
+						onclick="changeHealth('player','enemy','punch'),tempDraw('punch','player')">Punch</button>
+					<button class="attack id = " kick"
+						onclick="changeHealth('player','enemy','kick'),tempDraw('kick','player')">Kick</button>
+					<button class="attack" id="fireball"
+						onclick="changeHealth('player','enemy','fireball'),tempDraw('fireball','player')">Fireball</button>
 				</div>
 				<h4>Items</h4>
 				<div class="d-flex flex-row">
-					<button class="item1" onclick="itemMultiplier('GreenShell')">Green Shell</button>
+					<button class="item1" onclick="itemMultiplier('player','GreenShell')">Green Shell</button>
 					<button class="item2" onclick="changeHealth('player','heal')">Heal</button>
-					<button class="item2" onclick="itemMultiplier('Star')">Star</button>
+					<button class="item2" onclick="itemMultiplier('player','Star')">Star</button>
 				</div>
+			</div>
+			<div class="col-4">
+				<h3>Mario Health: <h3 id='health1'>100</h3>
+				</h3>
+				<h3>Master Hand Health: <h3 id='health2'> 100</h3>
+				</h3>
+			</div>
+			<div class="col-4">
+				<h3 id="playerAction"></h3>
+				<h3 id="enemyAction"></h3>
+
 			</div>
 			<!--		
 				Player 2 buttons:
