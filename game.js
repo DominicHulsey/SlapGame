@@ -2,11 +2,11 @@ let characters = {
   player: {
     character: 'mario',
     characterImgs: {
-      default: '/assets/mario.png',
-      kick: '/assets/Kick.png',
-      punch: '/assets/MarioPunch.png',
-      fireball: '/assets/MarioFireball.png',
-      heal: '/assets/MarioHeal.png'
+      default: 'assets/mario.png',
+      kick: 'assets/Kick.png',
+      punch: 'assets/MarioPunch.png',
+      fireball: 'assets/MarioFireball.png',
+      heal: 'assets/MarioHeal.png'
     },
     healthStatus: 100,
     attacks: {
@@ -60,6 +60,8 @@ function reset() {
   characters.enemy.attacks.pinch = -5;
   characters.enemy.attacks.kick = -10;
   drawHealth();
+  (document.getElementById('playerHealthBar')).value = characters.player.healthStatus;
+  (document.getElementById('enemyHealthBar')).value = characters.enemy.healthStatus;
 }
 
 function itemMultiplier(character, item) {
@@ -93,7 +95,12 @@ function changeHealth(attacker, victim, attack) {
     }
   }
   if (characters[victim].healthStatus == 0) {
-    alert('Game Over')
+    if (`${victim}` == 'player') {
+      alert('You lose!')
+    }
+    else {
+      alert('You Win!')
+    }
     drawHealth(victim)
   }
   drawHealth(victim);
