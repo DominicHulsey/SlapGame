@@ -1,5 +1,5 @@
 .bg-main {
-  background-image:url('/assets/finalDestination.jpg');
+  background-image:url('../assets/finalDestination.jpg');
   background-position:center;
   background-size:cover;
 }
