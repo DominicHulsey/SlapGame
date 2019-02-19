@@ -19,7 +19,7 @@ progress{
   max-width:100vw;
   object-fit: contain;
 }
-.mario {
+.character {
   max-height:275px;
   width:auto;
 }
